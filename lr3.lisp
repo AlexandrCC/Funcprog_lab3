@@ -10,12 +10,12 @@
          ;; rest    – ще не оброблена решта списку
          (if (null rest)
              ;; Дійшли до кінця: повертаємо список з одного елемента
-             ;; і прапор «змін не було на цьому кроці».
+          
              (values (list current) nil)
              (let ((next (car rest)))
                (if (> current next)     ; для сортування за зростанням
                    ;; треба поміняти місцями current і next
-                   ;; next піде вліво, current продовжує «спливати»
+                  
                    (multiple-value-bind (sublist changed)
                        (bubble-step current (cdr rest))
                      (declare (ignore changed)) ; <- ми його свідомо ігноруємо
